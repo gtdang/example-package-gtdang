@@ -5,11 +5,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build" 
 
 [project] 
-name = "example_package_gtdang" 
-version = "0.1.0" 
+name = "example_package_gtdang"  
 dependencies = ["numpy"]
-
-# In pyproject.toml
+dynamic = ["version"]
 
 [project.optional-dependencies]
 test = ["pytest"]
+
+[tool.hatch]
+version.path = "src/example_package_gtdang/__init__.py"
